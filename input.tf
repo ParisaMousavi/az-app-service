@@ -19,3 +19,12 @@ variable "additional_tags" {
   description = "Additional resource tags"
   type        = map(string)
 }
+
+variable "ssl_state " {
+  type    = string
+  default = "SniEnabled"
+}
+
+variable "hostname" {
+  type = string
+}
