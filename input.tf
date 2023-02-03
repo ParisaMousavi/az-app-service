@@ -13,3 +13,9 @@ variable "resource_group_name" {
 variable "app_service_plan_id" {
   type = string
 }
+
+variable "additional_tags" {
+  default     = {}
+  description = "Additional resource tags"
+  type        = map(string)
+}
