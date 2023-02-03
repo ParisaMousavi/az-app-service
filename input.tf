@@ -20,7 +20,7 @@ variable "additional_tags" {
   type        = map(string)
 }
 
-variable "ssl_state " {
+variable "ssl_state" {
   type    = string
   default = "SniEnabled"
 }
