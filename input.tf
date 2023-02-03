@@ -20,11 +20,16 @@ variable "additional_tags" {
   type        = map(string)
 }
 
-variable "ssl_state" {
-  type    = string
-  default = "SniEnabled"
+variable "custom_domain" {
+  type = object({
+    enabled   = bool
+    ssl_state = string
+    hostname  = string
+  })
+  default = {
+    enabled   = false
+    hostname  = "SniEnabled"
+    ssl_state = "value"
+  }
 }
 
-variable "hostname" {
-  type = string
-}
