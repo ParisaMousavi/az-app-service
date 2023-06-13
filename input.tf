@@ -28,3 +28,21 @@ variable "custom_domain" {
   })
 }
 
+variable "site_config" {
+  type = object({
+    always_on                = optional(bool, false)
+    dotnet_framework_version = string
+    ftps_state               = optional(string, "FtpsOnly")
+    cors = object({
+      allowed_origins = string
+    })
+  })
+  default = {
+    always_on                = false
+    ftps_state               = "FtpsOnly"
+    dotnet_framework_version = "v7.0"
+    cors = {
+      allowed_origins = "*"
+    }
+  }
+}
