@@ -22,14 +22,9 @@ variable "additional_tags" {
 
 variable "custom_domain" {
   type = object({
-    enabled   = bool
-    ssl_state = string
-    hostname  = string
+    enabled   = optional(string, false)
+    ssl_state = optional(string, null)
+    hostname  = optional(string, null)
   })
-  default = {
-    enabled   = false
-    hostname  = "SniEnabled"
-    ssl_state = "value"
-  }
 }
 
