@@ -34,7 +34,7 @@ variable "site_config" {
     dotnet_framework_version = string
     ftps_state               = optional(string, "FtpsOnly")
     cors = object({
-      allowed_origins = string
+      allowed_origins = list(string)
     })
   })
   default = {
@@ -42,7 +42,7 @@ variable "site_config" {
     ftps_state               = "FtpsOnly"
     dotnet_framework_version = "v7.0"
     cors = {
-      allowed_origins = "*"
+      allowed_origins = ["*"]
     }
   }
 }
